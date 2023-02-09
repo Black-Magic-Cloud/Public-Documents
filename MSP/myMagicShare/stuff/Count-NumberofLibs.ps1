@@ -1,5 +1,6 @@
-$SPOSitePath = "https://MYTENANT.sharepoint.com"
-$connection = Connect-PnPOnline -Url "$($SPOSitePath)/sites/myMagicShare" -Interactive -ReturnConnection:$true
+$SPOTenantPath = "https://MYTENANT.sharepoint.com"
+$SPOSiteName = "myMagicShare"
+$connection = Connect-PnPOnline -Url "$($SPOTenantPath)/sites/$($SPOSiteName)" -Interactive -ReturnConnection:$true
 if(!$connection){Write-Host "Error connecting to PnP" -ForegroundColor red;exit}
 
 $lists = Get-PnPList
